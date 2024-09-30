@@ -1,0 +1,101 @@
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.spinner {
+    width: 25px;
+    height: 25px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 5px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.deal-card {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 0 20px 20px;
+    height: 0;
+    overflow: hidden;
+    animation: close 0.3s ease-in-out;
+}
+
+tr.opened {
+    height: 45px;
+}
+
+tr.opened .deal-card {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 0 20px 20px;
+    height: 85px;
+    animation: open 0.3s ease-in-out;
+}
+
+.deal-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deal-status {
+    display: flex;
+    gap: 5px;
+}
+
+@keyframes open {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 85px;
+    }
+}
+
+@keyframes close {
+    0% {
+        height: 85px;
+    }
+
+    100% {
+        height: 0;
+    }
+}
